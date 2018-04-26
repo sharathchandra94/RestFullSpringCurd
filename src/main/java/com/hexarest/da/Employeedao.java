@@ -32,19 +32,24 @@ public class Employeedao {
 
 	}
 
-	public List<Employee> createEmployee(Employee emp) {
-	 
-		employees.add(emp);
-		return employees;
+	public Employee createEmployee(Employee emp) {
+		Employee empnew =new Employee();
+		empnew.setId(emp.getId());
+		empnew.setDept(emp.getDept());
+		empnew.setName(emp.getName());
+		empnew.setSalary(emp.getSalary());
+		return empnew;
 		
 		
 	}
 
 	
-	  public static void main(String args[]) { 
+	 public static void main(String args[]) { 
 		  Employeedao dao1 =new Employeedao();
-		  dao1.createEmployee(new Employee(6, "ljd", "knd", 200));
-		  System.out.println(employees);
+		//Employee employee =  dao1.getEmployeeById(1);
+		 // List<Employee> employee=	  dao1.createEmployee(new Employee(6, "ljd", "knd", 200));
+		  
+		 // System.out.println(employee);
 	 }
 	 
 
