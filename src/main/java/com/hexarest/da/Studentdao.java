@@ -80,7 +80,43 @@ public class Studentdao {
 		}
 		return stu;
 	}
+	public Student getStudentByStandarad(String student_standard) {
+		List<Student> students = new ArrayList<Student>(getAllStudents());
+		Student stu = null;
+		Iterator<Student> itr = students.iterator();
+
+		while (itr.hasNext()) {
+			Student s = itr.next();
+			// System.out.println(s.getStudent_roll());
+			String name2 = student_standard.replaceAll("\\s+", "");
+			if (s.getStudent_standard().equalsIgnoreCase(name2)) {
+				// System.out.println(s);
+				stu = s;
+				// System.out.println(stu);
+				return stu;
+			}
+		}
+		return stu;
+	}
 	
+	public Student getStudentByGroup(String student_standard) {
+		List<Student> students = new ArrayList<Student>(getAllStudents());
+		Student stu = null;
+		Iterator<Student> itr = students.iterator();
+
+		while (itr.hasNext()) {
+			Student s = itr.next();
+			// System.out.println(s.getStudent_roll());
+			String name2 = student_standard.replaceAll("\\s+", "");
+			if (s.getStudent_group().equalsIgnoreCase(name2)) {
+				// System.out.println(s);
+				stu = s;
+				// System.out.println(stu);
+				return stu;
+			}
+		}
+		return stu;
+	}
 	
 	
 	
